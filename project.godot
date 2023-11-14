@@ -15,6 +15,10 @@ run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicPlayer="*res://scenes/autoload/music_player.tscn"
+
 [input]
 
 escape={
