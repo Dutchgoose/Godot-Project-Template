@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://44rt4llhx727"]
+[gd_scene load_steps=7 format=3 uid="uid://44rt4llhx727"]
 
 [ext_resource type="Texture2D" uid="uid://cyr57ci4t1cfk" path="res://icon.svg" id="1_4uwda"]
 [ext_resource type="Script" path="res://scenes/ui/loading_screen.gd" id="1_mlo8p"]
+[ext_resource type="PackedScene" uid="uid://doqa6vjfcdi1a" path="res://scenes/ui/sound_button.tscn" id="2_3brit"]
 
 [sub_resource type="Animation" id="Animation_n08g7"]
 resource_name = "loading"
@@ -51,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ContinueButton" type="Button" parent="MarginContainer"]
+[node name="ContinueButton" parent="MarginContainer" instance=ExtResource("2_3brit")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2

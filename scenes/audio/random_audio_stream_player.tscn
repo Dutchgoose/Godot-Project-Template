@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xs1w447sjhv"]
+
+[ext_resource type="AudioStream" uid="uid://hd5i7iq3p4t8" path="res://assets/audio/click1.ogg" id="1_ml410"]
+[ext_resource type="Script" path="res://scenes/audio/random_audio_stream_player.gd" id="2_0j32w"]
+
+[node name="RandomAudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ml410")
+bus = &"SFX"
+script = ExtResource("2_0j32w")

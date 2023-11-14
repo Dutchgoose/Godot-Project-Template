@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfqtepi7lg4x2"]
+[gd_scene load_steps=3 format=3 uid="uid://cfqtepi7lg4x2"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_lt8yj"]
+[ext_resource type="PackedScene" uid="uid://doqa6vjfcdi1a" path="res://scenes/ui/sound_button.tscn" id="2_aa8xj"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_lt8yj")
@@ -33,18 +34,18 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="PlayButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="OptionsButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
