@@ -26,3 +26,5 @@ In addition to being a good starting point for simple projects in Godot, you can
 - OnReady variables
 - Straightforward project structure
 - Audio Buses and Audio Playback
+- 
+![template-gif](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/481f09f7-053c-4a1e-a44a-7f7445975e10)
