@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta: float):
 	scene_load_status = ResourceLoader.load_threaded_get_status(main_scene_path, loading_progress)
 	if (scene_load_status == ResourceLoader.THREAD_LOAD_LOADED):
 		main_scene = ResourceLoader.load_threaded_get(main_scene_path)
