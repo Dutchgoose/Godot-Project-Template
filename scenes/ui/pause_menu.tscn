@@ -22,13 +22,13 @@ layout_mode = 2
 texture = ExtResource("2_28rqb")
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenuBody"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuBody/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="PauseMenuBody/PanelContainer/VBoxContainer"]

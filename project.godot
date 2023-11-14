@@ -23,6 +23,7 @@ MusicPlayer="*res://scenes/autoload/music_player.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=760
+window/stretch/mode="viewport"
 
 [gui]
 
