@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://44rt4llhx727"]
+
+[ext_resource type="Texture2D" uid="uid://cyr57ci4t1cfk" path="res://icon.svg" id="1_4uwda"]
+[ext_resource type="Script" path="res://scenes/ui/loading_screen.gd" id="1_mlo8p"]
+
+[sub_resource type="Animation" id="Animation_n08g7"]
+resource_name = "loading"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_aayyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2jnx"]
+_data = {
+"RESET": SubResource("Animation_aayyu"),
+"loading": SubResource("Animation_n08g7")
+}
+
+[node name="LoadingScreen" type="Node"]
+script = ExtResource("1_mlo8p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continue"
+
+[node name="LoadingLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Loading..."
+
+[node name="LoadingSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1064, 561)
+texture = ExtResource("1_4uwda")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading"
+libraries = {
+"": SubResource("AnimationLibrary_b2jnx")
+}
