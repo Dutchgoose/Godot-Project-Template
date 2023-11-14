@@ -33,4 +33,5 @@ In addition to being a good starting point for simple projects in Godot, you can
 
 
 Credits:
+	- [Ocean Waves Shader](https://godotshaders.com/shader/wind-waker-water-no-textures-needed/)
 	- [Ocean Waves Audio](https://freesound.org/people/SNaumann/sounds/708997/)
