@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://bojch1lk1ifh"]
-
-[node name="GlobalSoundAudioStreamPlayer" type="AudioStreamPlayer"]
-bus = &"SFX"
