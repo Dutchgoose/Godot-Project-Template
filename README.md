@@ -4,7 +4,8 @@ This template removes the repetition and pain of creating the Main Menu, Loading
 Right now there is no UI theme. Feel free to copy this template and apply your own theme to the UI. Hopefully, this can save someone a few hours 
 during a Game Jam.
 
-![template-gif-short](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/17ba7cfb-9027-4a59-9769-f1aca14e8ebc)
+![template-gif-short](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/ea1c574f-a1a4-4f49-ac32-972d12b4de16)
+
 
 ## Quickstart
 
