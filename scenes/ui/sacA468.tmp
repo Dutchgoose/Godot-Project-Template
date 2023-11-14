@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=3 uid="uid://dne0dfwavful2"]
+
+[ext_resource type="Script" path="res://scenes/ui/sacrifice_card.gd" id="1_e04iu"]
+[ext_resource type="PackedScene" uid="uid://cfhb8mwcs7qpj" path="res://scenes/component/random_stream_player_component.tscn" id="1_hr1sq"]
+[ext_resource type="AudioStream" uid="uid://bkt7kw6c2eq1y" path="res://assets/audio/switch1.ogg" id="2_tx76k"]
+[ext_resource type="AudioStream" uid="uid://cgfx4vn0icd2e" path="res://assets/audio/switch2.ogg" id="3_mhvpk"]
+[ext_resource type="AudioStream" uid="uid://def6k3ttqi3yq" path="res://assets/audio/switch3.ogg" id="4_2qh2c"]
+[ext_resource type="AudioStream" uid="uid://30vactbcor21" path="res://assets/audio/switch4.ogg" id="5_m5jpt"]
+[ext_resource type="AudioStream" uid="uid://bbwxjis7ln7sk" path="res://assets/audio/switch5.ogg" id="6_sob2d"]
+[ext_resource type="AudioStream" uid="uid://bt3ougjetxn01" path="res://assets/audio/switch10.ogg" id="7_imkgw"]
+[ext_resource type="Texture2D" uid="uid://6wbxtwtbjqnf" path="res://scenes/game_object/gold_coin/gold_coin.png" id="9_8g45s"]
+
+[sub_resource type="Animation" id="Animation_32ice"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d5nxm"]
+resource_name = "selected"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4),
+"transitions": PackedFloat32Array(1, 2.21914, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.0872665, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ClickPlayerComponent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6gm5"]
+_data = {
+"RESET": SubResource("Animation_32ice"),
+"selected": SubResource("Animation_d5nxm")
+}
+
+[node name="SacrificeCard" type="PanelContainer" groups=["sacrifice_card"]]
+custom_minimum_size = Vector2(70, 0)
+offset_right = 8.0
+offset_bottom = 23.0
+script = ExtResource("1_e04iu")
+
+[node name="ClickPlayerComponent" parent="." instance=ExtResource("1_hr1sq")]
+streams = Array[AudioStream]([ExtResource("2_tx76k"), ExtResource("3_mhvpk"), ExtResource("4_2qh2c"), ExtResource("5_m5jpt"), ExtResource("6_sob2d"), ExtResource("7_imkgw")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_t6gm5")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"AlternatePanelContainer"
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
+theme_override_font_sizes/font_size = 18
+text = "Recruit"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="PurchaseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+text = "123131"
+icon = ExtResource("9_8g45s")
+alignment = 2
