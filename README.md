@@ -6,7 +6,7 @@ during a Game Jam.
 
 ![template-gif-short](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/17ba7cfb-9027-4a59-9769-f1aca14e8ebc)
 
-A few of the key features in this template:
+## Key Features:
 - Main Menu Scene
 	- Play Button
 	- Options Button
@@ -22,7 +22,7 @@ A few of the key features in this template:
 	- Sound Effects and Music Audio Bus
 	- Windowed / Fullscreen toggle
 
-
+## Bonus
 In addition to being a good starting point for simple projects in Godot, you can also look through the code here for examples of many common patters in Godot 4. These include:
 - Threaded resource loading
 - UI Node Signals
@@ -31,7 +31,7 @@ In addition to being a good starting point for simple projects in Godot, you can
 - Straightforward project structure
 - Audio Buses and Audio Playback
 
-Directory Structure:
+## Directory Structure:
 ```
 scenes/
     ui/
