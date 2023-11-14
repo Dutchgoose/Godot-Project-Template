@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfqtepi7lg4x2"]
+[gd_scene load_steps=3 format=3 uid="uid://b8b6q7g4bsaw5"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_lt8yj"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_5rnul"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="2_28rqb"]
 
-[node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_lt8yj")
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_5rnul")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -12,6 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(0.286275, 0.286275, 0.286275, 0.713726)
+layout_mode = 2
+texture = ExtResource("2_28rqb")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -19,7 +26,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Game Template"
+text = "Paused
+"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
@@ -33,10 +41,10 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Play"
+text = "Continue"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -44,7 +52,7 @@ layout_mode = 2
 disabled = true
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit"
+text = "Main Menu"
