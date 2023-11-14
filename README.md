@@ -31,6 +31,19 @@ In addition to being a good starting point for simple projects in Godot, you can
 - Straightforward project structure
 - Audio Buses and Audio Playback
 
+Directory Structure:
+```
+scenes/
+    ui/
+    autoload/
+    main.tscn
+assets/
+    images/
+    audio/
+resources/
+    shaders/
+    theme/
+```
 
 Credits:
 	- [Ocean Waves Shader](https://godotshaders.com/shader/wind-waker-water-no-textures-needed/)
