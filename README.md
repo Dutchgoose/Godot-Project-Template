@@ -6,6 +6,12 @@ during a Game Jam.
 
 ![template-gif-short](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/17ba7cfb-9027-4a59-9769-f1aca14e8ebc)
 
+## Quickstart
+
+1. Clone this repository
+2. Open the Scene in Godot 4+
+3. Click "Play" inside of Godot
+
 ## Key Features:
 - Main Menu Scene
 	- Play Button
