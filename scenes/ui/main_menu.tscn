@@ -6,46 +6,53 @@
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_lt8yj")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MainMenuBody" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MainMenuBody/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Game Template"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuBody/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="PlayButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="PlayButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 text = "Play"
 
-[node name="OptionsButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="OptionsButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
-disabled = true
+size_flags_vertical = 4
 text = "Options"
 
-[node name="QuitButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="QuitButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 text = "Quit"

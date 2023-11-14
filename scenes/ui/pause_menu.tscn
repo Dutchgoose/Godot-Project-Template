@@ -8,52 +8,52 @@
 process_mode = 3
 script = ExtResource("1_5rnul")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PauseMenuBody" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="PauseMenuBody"]
 modulate = Color(0.286275, 0.286275, 0.286275, 0.713726)
 layout_mode = 2
 texture = ExtResource("2_28rqb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuBody"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PauseMenuBody/VBoxContainer"]
 layout_mode = 2
 text = "Paused
 "
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenuBody/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuBody/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="ContinueButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
+[node name="ContinueButton" parent="PauseMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Continue"
 
-[node name="OptionsButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
+[node name="OptionsButton" parent="PauseMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
 unique_name_in_owner = true
 layout_mode = 2
-disabled = true
 text = "Options"
 
-[node name="MainMenuButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
+[node name="MainMenuButton" parent="PauseMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_vnr64")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Main Menu"
