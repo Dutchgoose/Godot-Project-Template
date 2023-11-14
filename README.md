@@ -4,7 +4,7 @@ This template removes the repetition and pain of creating the Main Menu, Loading
 Right now there is no UI theme. Feel free to copy this template and apply your own theme to the UI. Hopefully, this can save someone a few hours 
 during a Game Jam.
 
-![template-gif](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/481f09f7-053c-4a1e-a44a-7f7445975e10)
+![template-gif-short](https://github.com/Dutchgoose/Godot-Project-Template/assets/5461381/17ba7cfb-9027-4a59-9769-f1aca14e8ebc)
 
 A few of the key features in this template:
 - Main Menu Scene
