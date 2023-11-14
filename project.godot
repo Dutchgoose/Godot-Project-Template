@@ -19,6 +19,16 @@ config/icon="res://icon.svg"
 
 MusicPlayer="*res://scenes/autoload/music_player.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=760
+
+[gui]
+
+theme/custom="res://resources/theme/theme.tres"
+theme/custom_font="res://resources/theme/Rockboxcond12.ttf"
+
 [input]
 
 escape={
@@ -26,3 +36,7 @@ escape={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

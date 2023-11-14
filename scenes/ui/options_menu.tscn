@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvoysvboloo3p"]
+[gd_scene load_steps=4 format=3 uid="uid://dvoysvboloo3p"]
 
 [ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="1_8l6bt"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="2_cpl0d"]
 [ext_resource type="PackedScene" uid="uid://doqa6vjfcdi1a" path="res://scenes/ui/sound_button.tscn" id="3_w2wc7"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
@@ -12,6 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(0.286275, 0.286275, 0.286275, 0.713726)
+layout_mode = 2
+texture = ExtResource("2_cpl0d")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2

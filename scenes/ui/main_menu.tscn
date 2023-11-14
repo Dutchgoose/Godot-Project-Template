@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfqtepi7lg4x2"]
+[gd_scene load_steps=6 format=3 uid="uid://cfqtepi7lg4x2"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_lt8yj"]
 [ext_resource type="PackedScene" uid="uid://doqa6vjfcdi1a" path="res://scenes/ui/sound_button.tscn" id="2_aa8xj"]
+[ext_resource type="Shader" path="res://resources/shaders/water.gdshader" id="2_o6ofy"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="3_cruga"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h615w"]
+shader = ExtResource("2_o6ofy")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 1.0
+shader_parameter/tile = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_lt8yj")
+
+[node name="BackgroundShaderedSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h615w")
+position = Vector2(649, 383)
+scale = Vector2(100, 50)
+texture = ExtResource("3_cruga")
 
 [node name="MainMenuBody" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -13,45 +30,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody"]
+[node name="PanelContainer" type="PanelContainer" parent="MainMenuBody"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MainMenuBody/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuBody/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Game Template"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenuBody/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="PlayButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="PlayButton" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 text = "Play"
 
-[node name="OptionsButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="OptionsButton" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 text = "Options"
 
-[node name="QuitButton" parent="MainMenuBody/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
+[node name="QuitButton" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
