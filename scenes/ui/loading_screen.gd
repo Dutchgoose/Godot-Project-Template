@@ -4,7 +4,7 @@ extends Node
 @onready var loading_label = %LoadingLabel
 @onready var loading_sprite = %LoadingSprite
 
-var main_scene_path = "res://Scenes/main.tscn"
+var main_scene_path = "res://scenes/main.tscn"
 var loading_progress = []
 var scene_load_status = 0
 var main_scene: PackedScene
