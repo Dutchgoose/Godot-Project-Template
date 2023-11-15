@@ -28,6 +28,8 @@ during a Game Jam.
 - Options Menu
 	- Sound Effects and Music Audio Bus
 	- Windowed / Fullscreen toggle
+ - Persistent Game Settings (volume, display settings)
+	- Use Godot's ResourceLoader a custom `settings.tres` resource to persist settings.
 
 ## Bonus
 In addition to being a good starting point for simple projects in Godot, you can also look through the code here for examples of many common patters in Godot 4. These include:
