@@ -28,7 +28,7 @@ during a Game Jam.
 - Options Menu
 	- Sound Effects and Music Audio Bus
 	- Windowed / Fullscreen toggle
- - Game Settings (volume, display settings) persisted across game sessions
+ - Persistent Game Settings (volume, display settings)
 	- Use Godot's ResourceLoader a custom `settings.tres` resource to persist settings.
 
 ## Bonus
