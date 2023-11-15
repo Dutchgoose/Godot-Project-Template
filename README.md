@@ -52,6 +52,8 @@ assets/
 resources/
     shaders/
     theme/
+    settings/
+scripts/
 ```
 
 Credits:
