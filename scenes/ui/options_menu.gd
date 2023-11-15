@@ -15,6 +15,7 @@ func _ready():
 	window_button.pressed.connect(on_window_button_pressed)
 	sfx_slider.value_changed.connect(on_audio_slider_changed.bind("SFX"))
 	music_slider.value_changed.connect(on_audio_slider_changed.bind("Music"))
+	
 	update_display()
 
 
@@ -36,16 +37,17 @@ func set_bus_volume_percent(bus_name: String, percent: float):
 	var bus_index = AudioServer.get_bus_index(bus_name)
 	var volume_db = linear_to_db(percent)
 	AudioServer.set_bus_volume_db(bus_index, volume_db)
+	GameSettings.write_back_volume_setting(bus_name, percent)
 
 
 func on_window_button_pressed():
 	var mode = DisplayServer.window_get_mode()
-	if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	if (mode == DisplayServer.WINDOW_MODE_FULLSCREEN):
+		GameSettings.set_window_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	
+		GameSettings.set_window_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+	GameSettings.write_back_display_settings(DisplayServer.window_get_mode())
 	update_display()
 
 

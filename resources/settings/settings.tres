@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Settings" load_steps=2 format=3 uid="uid://c1ldof8qqci2g"]
+
+[ext_resource type="Script" path="res://resources/settings/settings.gd" id="1_mloi4"]
+
+[resource]
+script = ExtResource("1_mloi4")
+sfx_volume = 1.0
+music_volume = 1.0
+window_mode = 0
