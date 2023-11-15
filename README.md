@@ -10,8 +10,8 @@ during a Game Jam.
 ## Quickstart
 
 1. Clone this repository
-2. Open the Scene in Godot 4+
-3. Click "Play" inside of Godot
+2. Change your Project Name in `Project -> Project Settings -> Application -> Config -> Name Localized` 
+4. Click "Play" inside of Godot
 
 ## Key Features:
 - Main Menu Scene
@@ -43,16 +43,16 @@ In addition to being a good starting point for simple projects in Godot, you can
 ## Directory Structure:
 ```
 scenes/
-    ui/
-    autoload/
-    main.tscn
+	ui/
+	autoload/
+	main.tscn
 assets/
-    images/
-    audio/
+	images/
+	audio/
 resources/
-    shaders/
-    theme/
-    settings/
+	shaders/
+	theme/
+	settings/
 scripts/
 ```
 

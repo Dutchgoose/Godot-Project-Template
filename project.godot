@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="UI-Template"
+config/name="Godot-Project-Template"
+config/description="A template project that includes basic UI, audio management, persistent settings, and scene transitions."
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
